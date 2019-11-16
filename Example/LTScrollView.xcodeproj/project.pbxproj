@@ -361,7 +361,7 @@
 				TargetAttributes = {
 					607FACCF1AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
-						DevelopmentTeam = U33J5W5C5M;
+						DevelopmentTeam = Y63A69HSLB;
 						LastSwiftMigration = 0900;
 					};
 					607FACE41AFB9204008FA782 = {
@@ -377,6 +377,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -678,7 +679,7 @@
 			baseConfigurationReference = 5590D6C6104CB4044192B0FA /* Pods-LTScrollView_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = U33J5W5C5M;
+				DEVELOPMENT_TEAM = Y63A69HSLB;
 				INFOPLIST_FILE = LTScrollView/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -695,7 +696,7 @@
 			baseConfigurationReference = B119E2D80EDE6DCAB9CE1BD8 /* Pods-LTScrollView_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = U33J5W5C5M;
+				DEVELOPMENT_TEAM = Y63A69HSLB;
 				INFOPLIST_FILE = LTScrollView/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

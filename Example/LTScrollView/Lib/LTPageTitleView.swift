@@ -47,6 +47,29 @@ public typealias LTDidSelectTitleViewHandle = (Int) -> Void
     var isCustomTitleView: Bool = false {
         didSet {
             if isCustomTitleView == false {
+                if layout.customBottomViewSpaceHeight > 0 {
+                    let bView = UIView.init(frame: CGRect.init(x: 0, y: bounds.height - layout.customBottomViewSpaceHeight, width: bounds.width, height: layout.customBottomViewSpaceHeight))
+                    bView.backgroundColor = layout.titleViewBgColor
+                    let l_label = UILabel.init(frame: CGRect.init(x: 10, y: 0, width: bounds.width / 3.0, height: layout.customBottomViewSpaceHeight))
+                    l_label.text = "名称"
+                    l_label.textColor = UIColor.white
+                    l_label.font = .systemFont(ofSize: 13)
+                    l_label.textAlignment = .left
+                    bView.addSubview(l_label)
+                    let c_label = UILabel.init(frame: CGRect.init(x: bounds.width / 3.0, y: 0, width: bounds.width / 3.0, height: layout.customBottomViewSpaceHeight))
+                    c_label.text = "最新价"
+                    c_label.textAlignment = .center
+                    c_label.textColor = UIColor.white
+                    c_label.font = .systemFont(ofSize: 13)
+                    bView.addSubview(c_label)
+                    let r_label = UILabel.init(frame: CGRect.init(x: (bounds.width / 3.0) * 2 - 10, y: 0, width: bounds.width / 3.0, height: layout.customBottomViewSpaceHeight))
+                    r_label.text = "涨跌幅"
+                    r_label.textAlignment = .right
+                    r_label.textColor = UIColor.white
+                    r_label.font = .systemFont(ofSize: 13)
+                    bView.addSubview(r_label)
+                    addSubview(bView)
+                }
                 setupSubViews()
             }
         }
@@ -57,20 +80,21 @@ public typealias LTDidSelectTitleViewHandle = (Int) -> Void
     private lazy var glt_selectTitleRGBlColor: (r : CGFloat, g : CGFloat, b : CGFloat) = getRGBWithColor(layout.titleSelectColor ?? SELECT_BASE_COLOR)
     
     private lazy var sliderScrollView: UIScrollView = {
-        let sliderScrollView = UIScrollView(frame: CGRect(x: 0, y: 0, width: bounds.width, height: bounds.height))
+        let sliderScrollView = UIScrollView(frame: CGRect(x: 0, y: 0, width: bounds.width, height: bounds.height - layout.customBottomViewSpaceHeight))
         sliderScrollView.showsHorizontalScrollIndicator = false
         sliderScrollView.bounces = false
+//        sliderScrollView.backgroundColor = .orange
         return sliderScrollView
     }()
     
     private lazy var pageBottomLineView: UIView = {
-        let pageBottomLineView = UIView(frame: CGRect(x: 0, y: bounds.height - layout.pageBottomLineHeight, width: bounds.width, height: layout.pageBottomLineHeight))
+        let pageBottomLineView = UIView(frame: CGRect(x: 0, y: bounds.height - layout.customBottomViewSpaceHeight - layout.pageBottomLineHeight, width: bounds.width, height: layout.pageBottomLineHeight))
         pageBottomLineView.backgroundColor = layout.pageBottomLineColor
         return pageBottomLineView
     }()
     
     private lazy var sliderLineView: UIView = {
-        let sliderLineView = UIView(frame: CGRect(x: layout.lrMargin, y: bounds.height - layout.bottomLineHeight - layout.pageBottomLineHeight, width: 0, height: layout.bottomLineHeight))
+        let sliderLineView = UIView(frame: CGRect(x: layout.lrMargin, y: bounds.height - layout.customBottomViewSpaceHeight - layout.bottomLineHeight - layout.pageBottomLineHeight, width: 0, height: layout.bottomLineHeight))
         sliderLineView.backgroundColor = layout.bottomLineColor
         return sliderLineView
     }()
@@ -83,6 +107,7 @@ public typealias LTDidSelectTitleViewHandle = (Int) -> Void
             sliderScrollView.contentInsetAdjustmentBehavior = .never
         }
         backgroundColor = layout.titleViewBgColor
+    
     }
     
     /* 滚动到某个位置 */
@@ -154,7 +179,7 @@ extension LTPageTitleView {
         
         // 按钮布局
         var upX: CGFloat = layout.lrMargin
-        let subH = bounds.height - layout.bottomLineHeight
+        let subH = bounds.height - layout.customBottomViewSpaceHeight - layout.bottomLineHeight
         for index in 0..<titles.count {
             let subW = glt_textWidths[index]
             let buttonReact = CGRect(x: upX, y: 0, width: subW, height: subH)

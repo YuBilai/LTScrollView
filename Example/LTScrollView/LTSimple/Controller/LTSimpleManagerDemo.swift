@@ -32,10 +32,18 @@ class LTSimpleManagerDemo: UIViewController {
         return vcs
     }()
     
+    private var bottomView: UILabel = {
+        let label = UILabel.init(frame: CGRect.init(x: 0, y: 50, width: UIScreen.main.bounds.size.width, height: 30))
+       label.text = "啦啦啦啦啦啦"
+       label.backgroundColor = .yellow
+       return label
+    }()
+    
     private lazy var layout: LTLayout = {
         let layout = LTLayout()
         layout.bottomLineHeight = 4.0
         layout.bottomLineCornerRadius = 2.0
+        layout.customBottomViewSpaceHeight = 30
         /* 更多属性设置请参考 LTLayout 中 public 属性说明 */
         return layout
     }()

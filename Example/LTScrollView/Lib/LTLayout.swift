@@ -30,7 +30,7 @@ public class LTLayout: NSObject {
     @objc public var bottomLineColor: UIColor? = UIColor.red
     
     /* 整个滑块的高，pageTitleView的高 */
-    @objc public var sliderHeight: CGFloat = 44.0
+    @objc public var sliderHeight: CGFloat = 80
     
     /* 单个滑块的宽度, 一旦设置，将不再自动计算宽度，而是固定为你传递的值 */
     @objc public var sliderWidth: CGFloat = glt_sliderDefaultWidth
@@ -85,6 +85,11 @@ public class LTLayout: NSObject {
     
     /* 是否悬停 默认为true开启悬停 此属性仅对LTSimpleManager有效 关闭时记得修改viewControll的frame*/
     @objc public var isHovered: Bool = true
+    
+    
+    @objc public var customBottomViewSpaceHeight: CGFloat = 0
+    
+
     
     /* 内部使用 - 外界不需要调用 */
     internal var isSinglePageView: Bool = false
