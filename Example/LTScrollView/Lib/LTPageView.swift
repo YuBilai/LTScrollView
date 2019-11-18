@@ -53,6 +53,7 @@ public class LTPageView: UIView {
         scrollView.bounces = layout.isShowBounces
         scrollView.isScrollEnabled = layout.isScrollEnabled
         scrollView.showsHorizontalScrollIndicator = layout.showsHorizontalScrollIndicator
+        scrollView.backgroundColor = layout.pageViewBgColor
         return scrollView
     }()
     

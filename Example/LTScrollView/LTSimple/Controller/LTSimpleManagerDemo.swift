@@ -44,6 +44,7 @@ class LTSimpleManagerDemo: UIViewController {
         layout.bottomLineHeight = 4.0
         layout.bottomLineCornerRadius = 2.0
         layout.customBottomViewSpaceHeight = 30
+        layout.pageViewBgColor = .red
         /* 更多属性设置请参考 LTLayout 中 public 属性说明 */
         return layout
     }()

@@ -89,7 +89,7 @@ public class LTLayout: NSObject {
     
     @objc public var customBottomViewSpaceHeight: CGFloat = 0
     
-
+    @objc public var pageViewBgColor: UIColor = UIColor.white
     
     /* 内部使用 - 外界不需要调用 */
     internal var isSinglePageView: Bool = false
